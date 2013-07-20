@@ -9,7 +9,7 @@ namespace beta.TheSoundOf.net.Models
     public class DB: DbContext
     {
         public DB()
-            : base("DefaultConnection")
+           // : base("DefaultConnection")
         {
                 
         }

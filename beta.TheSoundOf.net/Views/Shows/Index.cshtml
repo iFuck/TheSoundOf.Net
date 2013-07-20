@@ -10,6 +10,16 @@
 <h2>Index</h2>
 
 <p>
+    @using (Html.BeginForm("Index","Shows", FormMethod.Get))
+    {
+        @Html.TextBox("searchText",(object)ViewBag.SearchText) @*,ViewBag.SearchText,null);*@
+            
+            <input type="submit" class="btn" value="Search" style="margin-top:-10px" />
+        
+    }
+
+</p>
+<p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>
@@ -41,4 +51,4 @@
 
 </table>
 
-@Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Index", new { page = page, foo = "bar" }))
+@Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Index", new { page = page, searchText =ViewBag.SearchText }))
