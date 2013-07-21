@@ -17,5 +17,7 @@ namespace beta.TheSoundOf.net.Models
 
         public virtual string Guid { get; set; }
         public virtual Producer Producer { get; set; }
+
+        public virtual DateTime? PublicationDate { get; set; }
     }
 }

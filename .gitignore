@@ -1,3 +1,6 @@
-/App_Data/*.*
-/bin/*.*
-/obj/*.*
+/beta.TheSoundOf.net/App_Data/*.*
+/beta.TheSoundOf.net/bin/*.*
+/beta.TheSoundOf.net/obj/*.*
+beta.TheSoundOf.net.Tests/App_Data/*.*
+beta.TheSoundOf.net.Tests/bin/*.*
+beta.TheSoundOf.net.Tests/obj/*.*

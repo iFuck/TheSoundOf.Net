@@ -14,7 +14,7 @@ namespace beta.TheSoundOf.net.Controllers
         public ActionResult Index()
         {
             new beta.TheSoundOf.net.Jobs.FeedsUpdaterJob().UpdateFeeds();
-            return Json(new{status="ok"});
+            return RedirectToAction("Index","Shows");
         }
 
     }

@@ -18,5 +18,15 @@ namespace beta.TheSoundOf.net.Models
 
         public DbSet<Show> Shows { get; set; }
 
+
+        internal IQueryable<Show> GetShowsWithSearch(int? page, string searchText)
+        {
+            var shows =Shows.Include(x => x.Producer).OrderByDescending(x => x.PublicationDate).AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchText)) shows = shows.Where(x => x.Title.Contains(searchText) || x.Details.Contains(searchText)).AsQueryable();
+
+
+            return shows;
+        }
     }
 }

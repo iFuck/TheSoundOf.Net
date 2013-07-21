@@ -22,16 +22,15 @@ namespace beta.TheSoundOf.net.Controllers
         public ActionResult Index(int? page, string searchText)
     {
         ViewBag.SearchText = searchText;
-        var products = db.Shows.Include(x => x.Producer).OrderBy(x=>x.Id).AsQueryable();
-
-        if (!string.IsNullOrEmpty(searchText)) products = products.Where(x => x.Title.Contains(searchText) || x.Details.Contains(searchText)).AsQueryable();
+      
+        var shows = db.GetShowsWithSearch(page, searchText);
 
         var pageNumber = page ?? 1; // if no page was specified in the querystring, default to the first page (1)
-        var onePageOfProducts = products.OrderBy(x => x.Id).ToPagedList(pageNumber, 25); // will only contain 25 products max because of the pageSize
+        var onePageOfProducts = shows.ToPagedList(pageNumber, 25); // will only contain 25 products max because of the pageSize
 
         ViewBag.OnePageOfProducts = onePageOfProducts;
           
-            return View(onePageOfProducts);
+        return View(onePageOfProducts);
             
         }
 

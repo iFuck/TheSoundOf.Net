@@ -41,7 +41,8 @@ namespace beta.TheSoundOf.net.Jobs
                                 Mp3Url =  x.Enclosures.First().Url.AbsoluteUri.ToString(),
                                 ProducerId = p.Id,
                                 Title = x.Title,
-                                Details =  x.Description
+                                Details =  x.Description,
+                                PublicationDate = x.PublicationDate
                               
                                 });
                                

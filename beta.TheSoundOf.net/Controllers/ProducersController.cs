@@ -6,12 +6,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using beta.TheSoundOf.net.Models;
+using PagedList;
 
 namespace beta.TheSoundOf.net.Controllers
 {
     public class ProducersController : Controller
     {
         private DB db = new DB();
+
+
+        [ChildActionOnly]
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        public ActionResult Producers()
+        {
+            return View( db.Producers.Where(x => !x.IsBlocked).ToList());
+        }
 
         //
         // GET: /Producers/
@@ -24,13 +33,18 @@ namespace beta.TheSoundOf.net.Controllers
         //
         // GET: /Producers/Details/5
 
-        public ActionResult Details(int id = 0)
+        public ActionResult Details( int? page, int id = 0)
         {
-            Producer producer = db.Producers.Find(id);
+            Producer producer = db.Producers.Include(x=>x.Shows).FirstOrDefault(x=>x.Id == id);
             if (producer == null)
             {
                 return HttpNotFound();
             }
+            var pageNumber = page ?? 1; // if no page was specified in the querystring, default to the first page (1)
+            var onePageOfProducts = producer.Shows.AsQueryable().ToPagedList(pageNumber, 25); // will only contain 25 products max because of the pageSize
+
+            ViewBag.OnePageOfItems = onePageOfProducts;
+       
             return View(producer);
         }
 

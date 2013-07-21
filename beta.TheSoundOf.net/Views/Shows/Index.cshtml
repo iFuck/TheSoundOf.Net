@@ -8,48 +8,44 @@
 }
 
 <h2>Index</h2>
-
-<p>
-    @using (Html.BeginForm("Index","Shows", FormMethod.Get))
+<p class="span4">
+    @using (Html.BeginForm("Index", "Shows", FormMethod.Get, new { @class="search-form"}))
     {
-        @Html.TextBox("searchText",(object)ViewBag.SearchText) @*,ViewBag.SearchText,null);*@
-            
-            <input type="submit" class="btn" value="Search" style="margin-top:-10px" />
-        
+        @Html.TextBox("searchText", (object)ViewBag.SearchText) @*,ViewBag.SearchText,null);*@
+
+        <input type="submit" class="btn" value="Search" style="margin-top:-10px" />
+
     }
 
 </p>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            Producer
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink(item.Title, "Details", new { id = item.Id})
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Producer.Name)
-          </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+
+<div class="span12">
+    <div class="span2 pull-left">
+        Producers
+        @Html.Action("Producers","Producers")
+    </div>
+
+
+    <div class="span9 pull-left">
+
+        @foreach (beta.TheSoundOf.net.Models.Show item in Model)
+{
+            <div class="span8 well">
+                <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
+                <p>
+                    @item.Producer.Name
+                    <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
+
+                </p>
+            </div>
 }
 
-</table>
 
 
-@Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Index", new { page = page, searchText =ViewBag.SearchText }))
+        <p class="span11 offset1 pull-right">
+
+            @Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Index", new { page = page, searchText = ViewBag.SearchText }))
+        </p>
+    </div>
+</div>

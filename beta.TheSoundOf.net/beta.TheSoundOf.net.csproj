@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201307181446260_Added guid to sjows for uniqueness.Designer.cs">
       <DependentUpon>201307181446260_Added guid to sjows for uniqueness.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201307210819366_Publication date.cs" />
+    <Compile Include="Migrations\201307210819366_Publication date.Designer.cs">
+      <DependentUpon>201307210819366_Publication date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DB.cs" />
     <Compile Include="Models\Producer.cs" />
@@ -210,6 +214,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\mediaelementplayer.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -299,6 +304,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\mediaelement-player\mediaelement-and-player.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -331,6 +337,7 @@
     <Content Include="Views\Shared\_BootstrapLayout.empty.cshtml" />
     <Content Include="Views\Shared\_BootstrapLayout.basic.cshtml" />
     <Content Include="Views\Shared\_alerts.cshtml" />
+    <Content Include="Views\Producers\Producers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -350,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201307181446260_Added guid to sjows for uniqueness.resx">
       <DependentUpon>201307181446260_Added guid to sjows for uniqueness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307210819366_Publication date.resx">
+      <DependentUpon>201307210819366_Publication date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
