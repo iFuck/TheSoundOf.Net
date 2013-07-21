@@ -27,8 +27,9 @@
          @Html.DisplayNameFor(model => model.Mp3Url)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Mp3Url)
-    </div>
+          <audio id="player2" class="mejs-ted1" width="540" autoplay src="@Model.Mp3Url" type="audio/mp3" controls="controls"></audio>
+            
+</div>
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |

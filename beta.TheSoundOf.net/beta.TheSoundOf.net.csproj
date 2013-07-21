@@ -166,35 +166,9 @@
     </Compile>
     <Compile Include="Jobs\FeedsUpdaterJob.cs" />
     <Compile Include="Jobs\RssFeedLoader.cs" />
-    <Compile Include="Migrations\201307171558206_Add is blocked.cs">
+    <Compile Include="Migrations\Configuration.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Migrations\201307171558206_Add is blocked.Designer.cs">
-      <DependentUpon>201307171558206_Add is blocked.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201307171601526_Shows url added to producers.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Migrations\201307171601526_Shows url added to producers.Designer.cs">
-      <DependentUpon>201307171601526_Shows url added to producers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201307171911242_ParentId added to Show model.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Migrations\201307171911242_ParentId added to Show model.Designer.cs">
-      <DependentUpon>201307171911242_ParentId added to Show model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201307181446260_Added guid to sjows for uniqueness.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Migrations\201307181446260_Added guid to sjows for uniqueness.Designer.cs">
-      <DependentUpon>201307181446260_Added guid to sjows for uniqueness.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201307210819366_Publication date.cs" />
-    <Compile Include="Migrations\201307210819366_Publication date.Designer.cs">
-      <DependentUpon>201307210819366_Publication date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DB.cs" />
     <Compile Include="Models\Producer.cs" />
     <Compile Include="Models\Show.cs" />
@@ -206,6 +180,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DefaultConnection.mdf" />
+    <Content Include="App_Data\DefaultConnection_log.ldf">
+      <DependentUpon>DefaultConnection.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\body.css" />
     <Content Include="Content\bootstrap-mvc-validation.css" />
     <Content Include="Content\bootstrap-responsive.css" />
@@ -340,27 +318,10 @@
     <Content Include="Views\Producers\Producers.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="_ Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201307171558206_Add is blocked.resx">
-      <DependentUpon>201307171558206_Add is blocked.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201307171601526_Shows url added to producers.resx">
-      <DependentUpon>201307171601526_Shows url added to producers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201307171911242_ParentId added to Show model.resx">
-      <DependentUpon>201307171911242_ParentId added to Show model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201307181446260_Added guid to sjows for uniqueness.resx">
-      <DependentUpon>201307181446260_Added guid to sjows for uniqueness.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201307210819366_Publication date.resx">
-      <DependentUpon>201307210819366_Publication date.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

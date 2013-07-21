@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
+  <DbDacFx path="c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\AutoScripts\DefaultConnection_IncrementalSchemaOnly.dacpac" dacpacAction="Deploy" />
   <IisApp path="c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\Package\PackageTmp" />
   <setAcl path="c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
   <setAcl path="c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <setAcl path="c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\Package\PackageTmp\App_Data" setAclResourceType="Directory" setAclAccess="Write" />
 </sitemanifest>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<beta.TheSoundOf.net.Models.Producer>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Producers</title>
+</head>
+<body>
+    
+      <table>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "Details", "Producers", new { id = item.Id }, new  {style="text-decoration:none" })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

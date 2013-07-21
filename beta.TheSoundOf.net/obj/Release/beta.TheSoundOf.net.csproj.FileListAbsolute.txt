@@ -28,17 +28,12 @@ c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\System.Web.We
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\System.Web.WebPages.Deployment.xml
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\System.Web.WebPages.Razor.xml
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\beta.TheSoundOf.net.csprojResolveAssemblyReference.cache
-c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\beta.TheSoundOf.net.Migrations.Addisblocked.resources
-c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\beta.TheSoundOf.net.Migrations.Showsurladdedtoproducers.resources
-c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\beta.TheSoundOf.net.Migrations.ParentIdaddedtoShowmodel.resources
-c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\beta.TheSoundOf.net.csproj.GenerateResource.Cache
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\beta.TheSoundOf.net.dll
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\beta.TheSoundOf.net.pdb
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\NewRelic.Api.Agent.dll
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\Argotic.Common.dll
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\Argotic.Core.dll
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\Argotic.Extensions.dll
-c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\obj\Release\beta.TheSoundOf.net.Migrations.Addedguidtosjowsforuniqueness.resources
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\Calabonga.Mvc.PagedListExt.dll
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\Microsoft.Web.Mvc.dll
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\PagedList.dll

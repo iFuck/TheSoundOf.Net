@@ -4,9 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Producer: @Model.Name</h2>
 
-<fieldset>
+<fieldset style="display:none">
     <legend>Producer</legend>
 
     <div class="display-label">
@@ -27,3 +27,25 @@
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<div class="span12 ">
+
+    @foreach (beta.TheSoundOf.net.Models.Show item in Model.Shows)
+    {
+        <div class="offset1 span10 well">
+            <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
+            <p>
+                @item.Producer.Name
+                <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
+
+            </p>
+        </div>
+    }
+
+
+
+    <p class="span11 offset1 pull-right">
+
+        @Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfItems, page => Url.Action("Details", new { page = page , id = Model.Id}))
+    </p>
+</div>
