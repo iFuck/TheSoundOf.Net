@@ -28,22 +28,28 @@
     @Html.ActionLink("Back to List", "Index")
 </p>
 
+
 <div class="span12 ">
 
-    @foreach (beta.TheSoundOf.net.Models.Show item in Model.Shows)
-    {
-        <div class="offset1 span10 well">
-            <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
-            <p>
-                @item.Producer.Name
-                <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
+    <div class="span2 pull-left">
+        Producers
+        @Html.Action("Producers", "Producers")
+    </div>
+    <div class="9">
+        @foreach (beta.TheSoundOf.net.Models.Show item in Model.Shows)
+        {
+            <div class="span9 well">
+                <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
+                <p>
+                    @item.Producer.Name
+                    <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
 
-            </p>
-        </div>
-    }
+                </p>
+            </div>
+        }
 
 
-
+    </div>
     <p class="span11 offset1 pull-right">
 
         @Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfItems, page => Url.Action("Details", new { page = page , id = Model.Id}))
