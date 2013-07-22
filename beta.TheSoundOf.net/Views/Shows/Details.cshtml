@@ -4,34 +4,18 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h3>@Model.Title</h3>
+<div class="display-field">
+    <audio id="player2" class="mejs-ted1" width="540" autoplay src="@Model.Mp3Url" type="audio/mp3" controls="controls"></audio>
+
+
+</div>
 
 <fieldset>
-    <legend>Show</legend>
+    @Html.Raw(Model.Details)
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Details)
-    </div>
-    <div class="display-field">
-        @Html.Raw(model => model.Details)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Mp3Url)
-    </div>
-    <div class="display-field">
-          <audio id="player2" class="mejs-ted1" width="540" autoplay src="@Model.Mp3Url" type="audio/mp3" controls="controls"></audio>
-            
-</div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
