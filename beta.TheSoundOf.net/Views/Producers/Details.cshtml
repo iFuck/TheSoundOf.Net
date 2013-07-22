@@ -6,23 +6,7 @@
 
 <h3>Producer: @Model.Name</h3>
 
-<fieldset style="display:none">
-    <legend>Producer</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Url)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Url)
-    </div>
-</fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
@@ -31,10 +15,10 @@
 
         @foreach (beta.TheSoundOf.net.Models.Show item in Model.Shows)
         {
-            <div class="span9 well">
+            <div class="span8 well">
                 <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
                 <p>
-                    @item.Producer.Name
+                    @Html.ActionLink(item.Title, "Details", "Producers", new { id = item.Id }, null)
                     <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
 
                 </p>
@@ -43,7 +27,7 @@
 
 
     
-    <p class="span11 offset1 pull-right">
+    <div class="span12 row">
 
         @Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfItems, page => Url.Action("Details", new { page = page , id = Model.Id}))
-    </p>
+    </div>

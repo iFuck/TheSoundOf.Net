@@ -11,7 +11,7 @@
 <p class="span2">
     @using (Html.BeginForm("Index", "Shows", FormMethod.Get, new { @class="search-form"}))
     {
-        @Html.TextBox("searchText", (object)ViewBag.SearchText) @*,ViewBag.SearchText,null);*@
+        @Html.TextBox("searchText", (object)ViewBag.SearchText, new {@class="span4" }) @*,ViewBag.SearchText,null);*@
 
         <input type="submit" class="btn" value="Search" style="margin-top:-10px" />
 
@@ -26,7 +26,8 @@
             <div class="span8 well">
                 <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
                 <p>
-                    @item.Producer.Name
+                    @Html.ActionLink(item.Producer.Name, "Details", "Producers", new  { id = item.Producer.Id},null)
+                    
                     <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
 
                 </p>
@@ -35,8 +36,8 @@
 
 
 
-        <p class="span11 offset1 pull-right">
+        <div class="span12 row">
 
             @Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfProducts, page => Url.Action("Index", new { page = page, searchText = ViewBag.SearchText }))
-        </p>
+        </div>
   

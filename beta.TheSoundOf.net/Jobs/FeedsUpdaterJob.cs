@@ -33,7 +33,7 @@ namespace beta.TheSoundOf.net.Jobs
                    {
                        if (!guids.Contains(x.Guid.ToString()))
                        {
-                           if (p != null)
+                           if (p != null && x.Enclosures.Count >0)
                            {
                                p.Shows.Add(new Show { 
                                 Producer = p,
