@@ -4,21 +4,22 @@
     ViewBag.Title = "Details";
 }
 
-<h3>Producer: @Model.Name</h3>
+<div class="row span9 offset1">
+    <h3>Producer: @Model.Name</h3>
 
 
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
 
         @foreach (beta.TheSoundOf.net.Models.Show item in Model.Shows)
         {
             <div class="span8 well">
                 <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
                 <p>
-                    @Html.ActionLink(item.Title, "Details", "Producers", new { id = item.Id }, null)
+                    @Html.ActionLink(Model.Name, "Details", "Producers", new { id = Model.Id }, null)
                     <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
 
                 </p>
