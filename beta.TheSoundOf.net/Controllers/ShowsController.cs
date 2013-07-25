@@ -57,6 +57,7 @@ namespace beta.TheSoundOf.net.Controllers
         //
         // GET: /Shows/Create
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -67,6 +68,7 @@ namespace beta.TheSoundOf.net.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Show show)
         {
             if (ModelState.IsValid)
@@ -82,6 +84,7 @@ namespace beta.TheSoundOf.net.Controllers
         //
         // GET: /Shows/Edit/5
 
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             Show show = db.Shows.Find(id);
@@ -97,6 +100,7 @@ namespace beta.TheSoundOf.net.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(Show show)
         {
             if (ModelState.IsValid)
@@ -111,6 +115,7 @@ namespace beta.TheSoundOf.net.Controllers
         //
         // GET: /Shows/Delete/5
 
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Show show = db.Shows.Find(id);
@@ -126,6 +131,7 @@ namespace beta.TheSoundOf.net.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Show show = db.Shows.Find(id);

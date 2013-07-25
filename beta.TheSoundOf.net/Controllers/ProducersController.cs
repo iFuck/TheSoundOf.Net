@@ -30,7 +30,7 @@ namespace beta.TheSoundOf.net.Controllers
 
         //
         // GET: /Producers/
-
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Producers.ToList());
@@ -57,6 +57,7 @@ namespace beta.TheSoundOf.net.Controllers
         //
         // GET: /Producers/Create
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -67,6 +68,7 @@ namespace beta.TheSoundOf.net.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Producer producer)
         {
             if (ModelState.IsValid)
@@ -82,6 +84,7 @@ namespace beta.TheSoundOf.net.Controllers
         //
         // GET: /Producers/Edit/5
 
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             Producer producer = db.Producers.Find(id);
@@ -97,6 +100,7 @@ namespace beta.TheSoundOf.net.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(Producer producer)
         {
             if (ModelState.IsValid)
@@ -111,6 +115,7 @@ namespace beta.TheSoundOf.net.Controllers
         //
         // GET: /Producers/Delete/5
 
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Producer producer = db.Producers.Find(id);
@@ -126,6 +131,7 @@ namespace beta.TheSoundOf.net.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Producer producer = db.Producers.Find(id);

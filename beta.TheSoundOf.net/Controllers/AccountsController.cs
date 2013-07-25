@@ -24,10 +24,19 @@ namespace beta.TheSoundOf.net.Controllers
         {
             if (FormsAuthentication.Authenticate(Request.Form["userName"], Request.Form["userPassword"]))
             {
+                FormsAuthentication.SetAuthCookie(userName, false);
                 return RedirectToAction("Index", "Producers");
                // FormsAuthentication.RedirectFromLoginPage(txtUserName.Text, False);
             }
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index","Shows");
+        }
+
     }
 }
