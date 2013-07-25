@@ -15,10 +15,16 @@ namespace beta.TheSoundOf.net.Controllers
         private DB db = new DB();
 
 
+        public ProducersController()
+        {
+            ViewBag.Title = "The Sound Of .Net";
+        }
+
         [ChildActionOnly]
         [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Producers()
         {
+            
             return View( db.Producers.Where(x => !x.IsBlocked).ToList());
         }
 
@@ -41,10 +47,10 @@ namespace beta.TheSoundOf.net.Controllers
                 return HttpNotFound();
             }
             var pageNumber = page ?? 1; // if no page was specified in the querystring, default to the first page (1)
-            var onePageOfProducts = producer.Shows.AsQueryable().ToPagedList(pageNumber, 25); // will only contain 25 products max because of the pageSize
+            var onePageOfProducts = producer.Shows.OrderByDescending(x => x.PublicationDate).AsQueryable().ToPagedList(pageNumber, 25); // will only contain 25 products max because of the pageSize
 
             ViewBag.OnePageOfItems = onePageOfProducts;
-       
+
             return View(producer);
         }
 

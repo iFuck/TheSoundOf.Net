@@ -21,9 +21,9 @@
 
 
 
-        @foreach (beta.TheSoundOf.net.Models.Show item in Model)
+        @foreach (beta.TheSoundOf.net.Models.Show item in ViewBag.OnePageOfProducts)
 {
-            <div class="span8 well">
+            <div class="span9 well">
                 <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
                 <p>
                     @Html.ActionLink(item.Producer.Name, "Details", "Producers", new  { id = item.Producer.Id},null)

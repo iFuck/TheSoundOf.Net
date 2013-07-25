@@ -4,18 +4,26 @@
     ViewBag.Title = "Details";
 }
 
-<h3>@Model.Title</h3>
-<div class="display-field">
-    <audio id="player2" class="mejs-ted1" width="540" autoplay src="@Model.Mp3Url" type="audio/mp3" controls="controls"></audio>
+<div class="span9">
+    <h3>@Model.Title</h3>
+    <p>
+        @Html.ActionLink(Model.Producer.Name, "Details", "Producers", new { id = Model.Producer.Id }, null)
+
+        <span class="pull-right">@Model.PublicationDate.Value.ToShortDateString()</span>
+
+    </p>
+    <p class="row span12">
+        <audio id="player2" class="mejs-ted1 span9"  autoplay src="@Model.Mp3Url" type="audio/mp3" controls="controls"></audio>
 
 
+    </p>
+
+    <fieldset class="well">
+        @Html.Raw(Model.Details)
+
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-
-<fieldset>
-    @Html.Raw(Model.Details)
-
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
