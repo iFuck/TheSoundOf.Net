@@ -7,7 +7,10 @@ namespace beta.TheSoundOf.net
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            
+            //filters.Add(new ElmahHandleErrorAttribute());
             filters.Add(new HandleErrorAttribute());
+            
         }
     }
 }

@@ -51,6 +51,12 @@
     <Reference Include="Calabonga.Mvc.PagedListExt">
       <HintPath>..\packages\PagedListExt.Mvc4.1.2.1\lib\net45\Calabonga.Mvc.PagedListExt.dll</HintPath>
     </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.1.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Mvc">
       <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
@@ -185,6 +191,7 @@
     <Content Include="App_Data\DefaultConnection_log.ldf">
       <DependentUpon>DefaultConnection.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Content\body.css" />
     <Content Include="Content\bootstrap-mvc-validation.css" />
     <Content Include="Content\bootstrap-responsive.css" />

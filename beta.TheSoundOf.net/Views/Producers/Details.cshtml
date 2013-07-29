@@ -7,30 +7,30 @@
 <div class="row span9 offset1">
     <h3>Podcasts by " @Model.Name "</h3>
 
-    @if(User.Identity.IsAuthenticated)
+    @if (User.Identity.IsAuthenticated)
     {
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
     }
 </div>
 
-        @foreach (beta.TheSoundOf.net.Models.Show item in ViewBag.OnePageOfItems)
-        {
-            <div class="span9 well">
-                <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
-                <p>
-                    @Html.ActionLink(Model.Name, "Details", "Producers", new { id = Model.Id }, null)
-                    <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
+@foreach (beta.TheSoundOf.net.Models.Show item in ViewBag.OnePageOfItems)
+{
+    <div class="span9 well">
+        <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
+        <p>
+            @Html.ActionLink(Model.Name, "Details", "Producers", new { id = Model.Id }, null)
+            <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
 
-                </p>
-            </div>
-        }
-
-
-    
-    <div class="span12 row">
-
-        @Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfItems, page => Url.Action("Details", new { page = page , id = Model.Id}))
+        </p>
     </div>
+}
+
+
+
+<div class="span12 row">
+
+    @Html.PagedListPager((PagedList.IPagedList)ViewBag.OnePageOfItems, page => Url.Action("Details", new { page = page, id = Model.Id }))
+</div>

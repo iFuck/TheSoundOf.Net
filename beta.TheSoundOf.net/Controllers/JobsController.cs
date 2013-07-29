@@ -10,7 +10,7 @@ namespace beta.TheSoundOf.net.Controllers
     {
         //
         // GET: /Jobs/
-
+        
         public ActionResult Index()
         {
             new beta.TheSoundOf.net.Jobs.FeedsUpdaterJob().UpdateFeeds();

@@ -13,7 +13,7 @@
 
     </p>
     <p class="row span12">
-        <audio id="player2" class="mejs-ted1 span9"  autoplay src="@Model.Mp3Url" type="audio/mp3" controls="controls"></audio>
+        <audio id="player2" class="mejs-ted1 span9" autoplay src="@Model.Mp3Url" type="audio/mp3" controls="controls"></audio>
 
 
     </p>
@@ -22,8 +22,14 @@
         @Html.Raw(Model.Details)
 
     </fieldset>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+
 </div>

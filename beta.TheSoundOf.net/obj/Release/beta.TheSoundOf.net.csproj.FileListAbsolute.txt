@@ -41,3 +41,5 @@ c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\PagedList.Mvc
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\WebActivatorEx.dll
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\PagedList.xml
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\PagedList.Mvc.xml
+c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\Elmah.dll
+c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net\bin\Elmah.Mvc.dll

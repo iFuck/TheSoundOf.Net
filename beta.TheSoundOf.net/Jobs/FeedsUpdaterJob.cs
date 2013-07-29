@@ -18,6 +18,13 @@ namespace beta.TheSoundOf.net.Jobs
             List<Exception> exceptions = null;
             var rssFeeds = new RssFeedLoader(urls).GetLoadedFeeds(out exceptions);
 
+            if (exceptions != null && exceptions.Count > 0)
+            {
+                exceptions.ForEach(e=>
+                Elmah.ErrorSignal.FromCurrentContext().Raise(e));
+            }
+
+
             rssFeeds.ForEach(feed => 
             {
                 var url = feed.Channel.SelfLink.ToString();

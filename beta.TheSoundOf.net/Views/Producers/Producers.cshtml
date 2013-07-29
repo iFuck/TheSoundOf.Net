@@ -4,18 +4,18 @@
     Layout = null;
 }
 
-    <ul class="unstyled">
+<ul class="unstyled">
+    <li>
+        <i class=" icon-forward"></i>   @Html.ActionLink("All shows", "Index", "shows")
+    </li>
+
+
+    @foreach (var item in Model)
+    {
         <li>
-            <i class=" icon-forward"></i>   @Html.ActionLink("All shows", "Index", "shows")
+            <i class=" icon-forward"></i>    @Html.ActionLink(item.Name, "Details", "Producers", new { id = item.Id }, new { style = "text-decoration:none" })
+
         </li>
+    }
 
-
-        @foreach (var item in Model)
-        {
-            <li>
-                <i class=" icon-forward"></i>    @Html.ActionLink(item.Name, "Details", "Producers", new { id = item.Id }, new { style = "text-decoration:none" })
-
-            </li>
-        }
-
-    </ul>
+</ul>
