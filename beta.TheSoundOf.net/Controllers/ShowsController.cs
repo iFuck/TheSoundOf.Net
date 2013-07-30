@@ -43,14 +43,15 @@ namespace beta.TheSoundOf.net.Controllers
 
         public ActionResult Details(int id = 0)
         {
-       
             Show show = db.Shows.Find(id);
             if (show == null)
             {
                 return HttpNotFound();
             }
             ViewBag.Title =string.Format( ".Net Show: {0}", show.Title);
-            
+
+            show.UpdateStatistics();
+            db.SaveChanges();
             return View(show);
         }
 

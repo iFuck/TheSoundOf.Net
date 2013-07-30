@@ -29,12 +29,14 @@ namespace beta.TheSoundOf.net.Models
             return shows;
         }
 
-        internal IQueryable<Show> GetShowsForRssFeed()
+        internal List<Show> GetShowsForRssFeed()
         {
             return Shows
                     .Where(x => !x.Producer.IsBlocked)
                     .OrderByDescending(x => x.PublicationDate)
-                    .Take(50);
+                    .Take(50)
+                    .ToList();
+
 
         }
     }

@@ -10,7 +10,7 @@ namespace beta.TheSoundOf.net.Services
 {
     public class FeedExporterService
     {
-        public static XDocument CreateFeed(IQueryable<Show> shows, string rootUrl)
+        public static XDocument CreateFeed(List<Show> shows, string rootUrl)
         {
         
             var rssFeed = new RssFeed("Main RSS Feed for TheSoundOf.Net");
@@ -19,12 +19,13 @@ namespace beta.TheSoundOf.net.Services
 
             foreach (var item in shows)
             {
+                var link =new Uri( string.Format(url,rootUrl, item.Id));
                 var rssItem = new RssItem
                 {
                     Author = item.Producer.Name,
                     Title = item.Title,
-                    Link =new Uri( string.Format(url,rootUrl, item.Id)),
-                    Guid = new RssGuid(item.Id.ToString(),false),
+                    Link =link,
+                    Guid = new RssGuid(link.AbsoluteUri.ToString(),true),
                     Description = item.Details,
                     PublicationDate = item.PublicationDate.HasValue ? item.PublicationDate.Value : DateTime.Now
                 };

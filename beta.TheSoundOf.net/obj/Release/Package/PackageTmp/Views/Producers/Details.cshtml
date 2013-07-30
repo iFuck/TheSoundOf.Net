@@ -22,6 +22,8 @@
         <h4>@Html.ActionLink(item.Title, "Details", "Shows", new { id = item.Id }, new { style = "text-decoration:none" })</h4>
         <p>
             @Html.ActionLink(Model.Name, "Details", "Producers", new { id = Model.Id }, null)
+            => <a target="_blank" href="@item.Producer.Url">www</a>
+
             <span class="pull-right">@item.PublicationDate.Value.ToShortDateString()</span>
 
         </p>

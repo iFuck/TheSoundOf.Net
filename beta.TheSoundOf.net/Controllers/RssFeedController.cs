@@ -19,7 +19,7 @@ namespace beta.TheSoundOf.net.Controllers
 
         public ActionResult Index()
         {
-            var rootUrl = WebConfigurationManager.AppSettings["RootUrl"] == null ? "http://localhost:1000" : WebConfigurationManager.AppSettings["RootUrl"];
+            var rootUrl = "http://asite.azurewebsites.net";// WebConfigurationManager.AppSettings["RootUrl"];//== null ? "http://localhost:1000" : WebConfigurationManager.AppSettings["RootUrl"];
             var document = new XDocument();
 
             try

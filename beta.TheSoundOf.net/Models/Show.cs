@@ -19,5 +19,20 @@ namespace beta.TheSoundOf.net.Models
         public virtual Producer Producer { get; set; }
 
         public virtual DateTime? PublicationDate { get; set; }
+
+        public virtual int PlayedOnReleasDate { get; set; }
+
+        public virtual int PlayedTotal { get; set; }
+
+
+
+        internal void UpdateStatistics()
+        {
+            PlayedTotal += 1;
+            var now = DateTime.Now;
+            if (PublicationDate.HasValue &&
+                (PublicationDate <= now && PublicationDate.Value.AddMonths(1) >= now))
+                PlayedOnReleasDate += 1;
+        }
     }
 }

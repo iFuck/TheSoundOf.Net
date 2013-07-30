@@ -61,8 +61,9 @@
     <Reference Include="Microsoft.Web.Mvc">
       <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="NewRelic.Api.Agent">
-      <HintPath>..\packages\NewRelic.Azure.WebSites.2.8.135.0\lib\NewRelic.Api.Agent.dll</HintPath>
+    <Reference Include="NewRelic.Api.Agent, Version=2.9.107.0, Culture=neutral, PublicKeyToken=06552fced0b33d87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NewRelic.Azure.WebSites.2.9.107.0\lib\NewRelic.Api.Agent.dll</HintPath>
     </Reference>
     <Reference Include="PagedList">
       <HintPath>..\packages\PagedList.1.16.0.0\lib\net40\PagedList.dll</HintPath>
@@ -174,6 +175,10 @@
     </Compile>
     <Compile Include="Jobs\FeedsUpdaterJob.cs" />
     <Compile Include="Jobs\RssFeedLoader.cs" />
+    <Compile Include="Migrations\201307301719572_Show Statistics.cs" />
+    <Compile Include="Migrations\201307301719572_Show Statistics.Designer.cs">
+      <DependentUpon>201307301719572_Show Statistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -189,6 +194,7 @@
     <Compile Include="Services\FeedExporterService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\beta.TheSoundOf.net.Models.DB.mdf" />
     <Content Include="App_Data\DefaultConnection.mdf" />
     <Content Include="App_Data\DefaultConnection_log.ldf">
       <DependentUpon>DefaultConnection.mdf</DependentUpon>
@@ -270,8 +276,8 @@
     <None Include="Properties\PublishProfiles\asite - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\asite - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\asite - Web Deploy.pubxml" />
-    <Content Include="newrelic\NewRelic.Profiler.dll" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="newrelic\NewRelic.Profiler.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\html5shiv.js" />
@@ -335,6 +341,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201307301719572_Show Statistics.resx">
+      <DependentUpon>201307301719572_Show Statistics.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
