@@ -23,3 +23,4 @@ c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net.Tests\bin\Debug\N
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net.Tests\obj\Debug\beta.TheSoundOf.net.Tests.csprojResolveAssemblyReference.cache
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net.Tests\obj\Debug\beta.TheSoundOf.net.Tests.dll
 c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net.Tests\obj\Debug\beta.TheSoundOf.net.Tests.pdb
+c:\_dev\TheSoundOf.Net\beta.TheSoundOf.net\beta.TheSoundOf.net.Tests\bin\Debug\Elmah.dll
